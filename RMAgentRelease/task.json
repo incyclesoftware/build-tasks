@@ -1,0 +1,38 @@
+{
+  "id": "04533270-42a0-11e5-8710-6f97f1a0db5e",
+  "name": "RMAgentRelease",
+  "friendlyName": "Start Agent-Based Release",
+  "description": "Starts an agent-based release",
+  "author": "InCycle Software",
+  "helpMarkDown": "Replace with markdown to show in help",
+  "category": "Deploy",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "6"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "RMAgentRelease $(message)",
+  "inputs": [
+      {
+        "name": "targetStage",
+        "type": "string",
+        "label": "Target Stage",
+        "defaultValue": "",
+        "required": false,
+        "helpMarkDown": "The target stage for the release. If left blank, will target the final stage in your release pipeline."
+    }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\agentrelease.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
