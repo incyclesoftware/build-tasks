@@ -1,0 +1,37 @@
+{
+  "id": "4b60e920-4299-11e5-a467-53355437e12a",
+  "name": "tokenmanager",
+  "friendlyName": "Swap RM .token files",
+  "description": "Swaps .token files in place of the non-tokenized versions",
+  "author": "InCycle Software",
+  "category": "Utility",
+  "visibility": [
+    "Build",
+    "Release"
+  ],
+  "demands": [],
+  "version": {
+    "Major": "0",
+    "Minor": "1",
+    "Patch": "4"
+  },
+  "minimumAgentVersion": "1.83.0",
+  "instanceNameFormat": "tokenmanager $(message)",
+  "inputs": [
+    {
+        "name": "tokenPattern",
+        "type": "filePath",
+        "label": "Solution",
+        "defaultValue": "**\\*.token",
+        "required": true,
+        "helpMarkDown": "Relative path from repo root to look for files. Wildcards can be used.  For example, `**\\*.token` for all .token files in all sub folders."
+    }
+  ],
+  "execution": {
+    "PowerShell": {
+      "target": "$(currentDirectory)\\tokenmanager.ps1",
+      "argumentFormat": "",
+      "workingDirectory": "$(currentDirectory)"
+    }
+  }
+}
