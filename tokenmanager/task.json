@@ -21,7 +21,7 @@
     {
         "name": "tokenPattern",
         "type": "filePath",
-        "label": "Solution",
+        "label": "Token Pattern",
         "defaultValue": "**\\*.token",
         "required": true,
         "helpMarkDown": "Relative path from repo root to look for files. Wildcards can be used.  For example, `**\\*.token` for all .token files in all sub folders."
